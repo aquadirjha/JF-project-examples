@@ -19,6 +19,7 @@ jobs:
     
     - name: Publish to NPM
       run: |
+           cd npm-example
            jf --version
            jf c add TESTJFServer --artifactory-url ${{ secrets.TESTARTIFACTORY}} --user ${{ secrets.TESTUSER }} --access-token ${{ secrets.TESTTOKEN }}
            echo "Current Working location $(pwd)"
