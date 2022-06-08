@@ -1,0 +1,25 @@
+name: NPM Example
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: chekout git repo
+      uses: actions/checkout@v2
+    
+    - uses: jfrog/setup-jfrog-cli@v2
+      run: |
+           jf --version
+           jf c add TESTJFServer --artifactory-url ${{ secrets.TESTARTIFACTORY}} --user ${{ secrets.TESTUSER }} --access-token ${{ secrets.TESTTOKEN }}
+           echo "Current Working location $(pwd)"
+          
+           jfrog rt npmi npm --build-name my-npm-build-2 --build-number 123 
+           jfrog rt bce my-npm-build-2 123
+           jfrog rt bag my-npm-build-2 123
+           jfrog rt npmp npm  --build-name my-npm-build-2 --build-number 123
+           jfrog rt bp my-npm-build-2 123
+

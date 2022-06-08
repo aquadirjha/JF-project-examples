@@ -1,0 +1,8 @@
+version: 1
+type: npm
+resolver:
+  repo: default-npm-remote
+  serverId: testaccount
+deployer:
+  repo: default-npm-local
+  serverId: testaccount
