@@ -1,0 +1,2 @@
+org.jfrog.test:multi:pom:3.7-SNAPSHOT
+\- junit:junit:jar:3.8.1:test
