@@ -16,7 +16,8 @@ jobs:
       uses: actions/checkout@v2
     - name: use Jfrog CLI to publish to NPM
       uses: jfrog/setup-jfrog-cli@v2
-
+    
+    - name: Publish to NPM
       run: |
            jf --version
            jf c add TESTJFServer --artifactory-url ${{ secrets.TESTARTIFACTORY}} --user ${{ secrets.TESTUSER }} --access-token ${{ secrets.TESTTOKEN }}
