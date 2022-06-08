@@ -5,24 +5,24 @@ on:
     branches: [ jfrog-poc ]
   pull_request:
     branches: [ jfrog-poc ]
-  workflow_dispatch:
-    branches: [ jfrog-poc ]
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    steps:   
 
-    steps:
-    
     - name: chekout git repo
       uses: actions/checkout@v2
-    - name: use Jfrog CLI to publish to NPM
-      uses: jfrog/setup-jfrog-cli@v2
+
     - name: setup node
       uses: actions/setup-node@v3
       with:
         node-version: '14'
-    - name: Publish to NPM
+
+    - name: use Jfrog CLI to publish to NPM
+      uses: jfrog/setup-jfrog-cli@v2
+
+
+    - name: Build and Publish to NPM
       run: |
            cd npm-example
            jfrog --version
