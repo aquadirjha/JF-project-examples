@@ -5,6 +5,8 @@ on:
     branches: [ jfrog-poc ]
   pull_request:
     branches: [ jfrog-poc ]
+  workflow_dispatch:
+    branches: [ jfrog-poc ]
 jobs:
   build:
 
