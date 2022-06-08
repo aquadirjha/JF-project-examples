@@ -14,3 +14,7 @@ org.jfrog.test:multi2:jar:3.7-SNAPSHOT
 \- junit:junit:jar:3.8.1:test
 org.jfrog.test:multi2:jar:3.7-SNAPSHOT
 \- junit:junit:jar:3.8.1:test
+org.jfrog.test:multi2:jar:3.7-SNAPSHOT
+\- junit:junit:jar:3.8.1:test
+org.jfrog.test:multi2:jar:3.7-SNAPSHOT
+\- junit:junit:jar:3.8.1:test
