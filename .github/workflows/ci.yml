@@ -29,6 +29,7 @@ jobs:
            jfrog c add testaccount --artifactory-url ${{ secrets.TESTARTIFACTORY}} --user ${{ secrets.TESTUSER }} --access-token ${{ secrets.TESTTOKEN }}
            echo "Current Working location $(pwd)"
            jfrog c show
+           npm view
            jfrog rt npmi install --build-name my-npm-build-2 --build-number 123 
            jfrog rt bce my-npm-build-2 123
            jfrog rt bag my-npm-build-2 123
