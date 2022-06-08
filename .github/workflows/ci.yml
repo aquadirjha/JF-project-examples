@@ -12,9 +12,11 @@ jobs:
 
     steps:
     
-    - uses: actions/checkout@v2
-    
-    - uses: jfrog/setup-jfrog-cli@v2
+    - name: chekout git repo
+      uses: actions/checkout@v2
+    - name: use Jfrog CLI to publish to NPM
+      uses: jfrog/setup-jfrog-cli@v2
+
       run: |
            jf --version
            jf c add TESTJFServer --artifactory-url ${{ secrets.TESTARTIFACTORY}} --user ${{ secrets.TESTUSER }} --access-token ${{ secrets.TESTTOKEN }}
